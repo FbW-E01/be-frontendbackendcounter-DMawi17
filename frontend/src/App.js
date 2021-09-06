@@ -8,7 +8,7 @@ function App() {
     //...
 
     const handleGetJson = () => {
-        fetch(url, { method: "GET" })
+        fetch(url)
             .then((res) => res.json())
             .then((json) => setCounter(json.counter));
     };
@@ -16,7 +16,10 @@ function App() {
     //...
 
     const handlePostJson = () => {
-        fetch(url, { method: "POST" });
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+        });
     };
 
     //...
